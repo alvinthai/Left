@@ -35,12 +35,15 @@ function Go () {
       range.moveEnd('character', to)
       range.moveStart('character', from)
       range.select()
+      range.move()
     }
     left.textarea_el.focus()
 
     if (scroll) {
       this.scroll_to(from, to)
     }
+
+
 
     return from === -1 ? null : from
   }
@@ -87,9 +90,13 @@ function Go () {
 
   Math.easeInOutQuad = function (t, b, c, d) {
     t /= d / 2
-    if (t < 1) return c / 2 * t * t + b
+    // if (t < 1) return c / 2 * t * t + b
+    // console.log(`${(c / 2 * t * t + b)*1}`)
+    if (t < 1) return (c / 2 * t * t + b)*1
     t--
-    return -c / 2 * (t * (t - 2) - 1) + b
+    // return -c / 2 * (t * (t - 2) - 1) + b
+    // console.log(`${(-c / 2 * (t * (t - 2) - 1) + b)*1}`)
+    return (-c / 2 * (t * (t - 2) - 1) + b)*1
   }
 
   function clamp (v, min, max) { return v < min ? min : v > max ? max : v }

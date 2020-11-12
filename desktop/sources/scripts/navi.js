@@ -31,7 +31,8 @@ function Navi () {
   }
 
   this._marker = function (pid, current, marker, markers) {
-    return `<li class='marker ${marker.type} ${current && current.line === marker.line ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})'><span>${marker.text}</span></li>`
+    return `<li class='marker ${marker.type} ${current && current.line === marker.line ? 'active' : ''}' onclick='left.go.to_page(${pid}, ${marker.line})
+    '><span>${marker.text}</span></li>`
   }
 
   this.next_page = function () {
@@ -73,6 +74,14 @@ function Navi () {
 
     const markers = left.project.page().markers()
     const pos = left.active_line_id()
+
+    left.textarea_el.selectionStart = left.textarea_el.selectionEnd;
+    setTimeout(function(){
+          console.log("moving focus...");
+          left.textarea_el.blur();
+          left.textarea_el.focus();
+    }, 201);
+
 
     if (markers.length < 1) { return }
 
