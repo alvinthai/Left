@@ -15,6 +15,17 @@ function Go () {
     left.load(page.text)
     left.go.to_line(line)
     left.update()
+
+    setTimeout(function(){
+      left.textarea_el.selectionEnd = left.textarea_el.selectionStart;
+    }, 201);
+
+    setTimeout(function(){
+          console.log("moving focus...");
+          left.textarea_el.blur();
+          left.textarea_el.focus();
+    }, 201);
+
   }
 
   this.to_line = function (id) {

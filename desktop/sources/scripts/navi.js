@@ -75,14 +75,6 @@ function Navi () {
     const markers = left.project.page().markers()
     const pos = left.active_line_id()
 
-    left.textarea_el.selectionStart = left.textarea_el.selectionEnd;
-    setTimeout(function(){
-          console.log("moving focus...");
-          left.textarea_el.blur();
-          left.textarea_el.focus();
-    }, 201);
-
-
     if (markers.length < 1) { return }
 
     for (const id in markers) {
