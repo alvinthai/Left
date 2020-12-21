@@ -1,10 +1,19 @@
-# Left
+# Right
 
-Instructions to use modified theme with Mac:
+Instructions to use my modified "Right" theme on Mac OSX systems:
 1. Open `Applications` folder
 2. Right click **Left** --> **Show Package Contents**
 3. Navigate to `Contents` --> `Resources` --> `app`
 4. Replace the pre-existing `Sources` folder with the modified `Sources` folder in this branch.
+
+
+Changes from Source code (version 131)
+- Sidebar has been moved to right of app
+- Tighter margins
+- Includes javascript bug fix for aligning page scroll position with Table of Contents navigation
+
+
+---
 
 <img src="https://raw.githubusercontent.com/hundredrabbits/100r.co/master/media/content/characters/left.hello.png" width="300"/>
 
